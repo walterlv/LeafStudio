@@ -15,7 +15,6 @@ public class MainMenuNewGameScript : Interactable
 
         Valve.VR.SteamVR_LoadLevel.Begin("Challenge1-1");
      
-        //SceneManager.LoadScene("Challenge1");
         base.OnHandHoverBegin(hand);
     }
 }
