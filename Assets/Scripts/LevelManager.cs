@@ -34,8 +34,7 @@ public class LevelManager : MonoBehaviour
 
     private void FallDownSunshine()
     {
-        gameObject.AddComponent<SunshineFallDown>();
-        var sunshineFallDown = gameObject.GetComponent<SunshineFallDown>();
+        var sunshineFallDown = gameObject.AddComponent<SunshineFallDown>();
 
         sunshineFallDown.SunshinePrefabs = PrefabsManager.SunshinePrefabs;
     }
