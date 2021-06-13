@@ -421,6 +421,7 @@ GameObject:
   m_Component:
   - component: {fileID: 427706309}
   - component: {fileID: 427706310}
+  - component: {fileID: 427706311}
   m_Layer: 0
   m_Name: GameLevelManager
   m_TagString: Untagged
@@ -454,6 +455,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 966ca59831df5ba45a57cce42a5d3de1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &427706311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427706308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d69b08b6315b75946ba2eb9dfe0b779b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SunshinePrefabs: {fileID: 3023204173859075682, guid: 951e2e0c097420b498dc5bf19743357c, type: 3}
 --- !u!1 &711013508
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,6 +691,10 @@ PrefabInstance:
     - target: {fileID: 3023204173859075682, guid: 951e2e0c097420b498dc5bf19743357c, type: 3}
       propertyPath: m_Name
       value: Sunshine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3023204173859075682, guid: 951e2e0c097420b498dc5bf19743357c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3023204173859075693, guid: 951e2e0c097420b498dc5bf19743357c, type: 3}
       propertyPath: m_Material
