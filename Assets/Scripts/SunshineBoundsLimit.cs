@@ -17,6 +17,19 @@ public class SunshineBoundsLimit : MonoBehaviour
         LimitPosition();
     }
 
+    void OnCollisionEnter(Collision collision)
+    {
+
+    }
+
+    void OnCollisionStay(Collision collision)
+    {
+        if(collision.gameObject.name == "Chloroplast")
+        {
+
+        }
+    }
+
     public float MinX = -1;
     public float MinY = 0;
     public float MinZ = -0.7f;
