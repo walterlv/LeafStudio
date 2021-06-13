@@ -24,12 +24,24 @@ public class SunshineBoundsLimit : MonoBehaviour
     public float MaxY = 1.8f;
     public float MaxZ = 0.5f;
 
+    private bool NearZero(float value)
+    {
+        if(value<0.001f && value > -0.001)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
     public void LimitPosition()
     {
         Transform trNeedLimit = transform;
         var rigidbody = GetComponent<Rigidbody>();
 
-        if (rigidbody.velocity.x == 0f && rigidbody.velocity.z == 0f && rigidbody.velocity.y < -0.05 && rigidbody.velocity.y > -0.3f)
+        if (NearZero(rigidbody.velocity.x) && NearZero(rigidbody.velocity.z) && 
+            rigidbody.velocity.y < -0.05 && 
+            rigidbody.velocity.y > -0.3f)
         {
             return;
         }
