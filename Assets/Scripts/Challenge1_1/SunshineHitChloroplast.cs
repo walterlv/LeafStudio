@@ -14,12 +14,31 @@ public class SunshineHitChloroplast : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Hitted)
+        {
+            StayTime += Time.deltaTime;
+
+            const float originScale = 0.1f;
+            var scale = (MaxStayTime - StayTime) / MaxStayTime * originScale;
+            transform.localScale = new Vector3(scale, scale, scale);
+        }
+
         if (StayTime > MaxStayTime)
         {
             LevelManager.GotoNextLevel();
             Destroy(this);
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "Chloroplast")
+        {
+            Hitted = true;
+        }
+    }
+
+    private bool Hitted;
 
     void OnCollisionStay(Collision collision)
     {
@@ -39,10 +58,10 @@ public class SunshineHitChloroplast : MonoBehaviour
 
     void OnCollisionExit(Collision collision)
     {
-        StayTime = 0;
+        //StayTime = 0;
     }
 
-    public float MaxStayTime = 3000f;
+    public float MaxStayTime = 1f;
 
     public float StayTime;
     public GameObject GameLevelManager { set; get; }
