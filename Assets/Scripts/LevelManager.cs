@@ -14,11 +14,11 @@ public class LevelManager : MonoBehaviour
 
     internal void GotoNextLevel()
     {
-        _currentLevelAction.Current();
         if (!_currentLevelAction.MoveNext())
         {
             _currentLevelAction = GetLevelList().GetEnumerator();
         }
+        _currentLevelAction.Current();
     }
 
     private IEnumerator<Action> _currentLevelAction;
