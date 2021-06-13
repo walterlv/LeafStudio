@@ -13,13 +13,23 @@ public class SunshineBoundsLimit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        LimitPosition(transform);
+        LimitPosition();
     }
 
-    public void LimitPosition(Transform trNeedLimit)
+    public float MinX;
+    public float MinY;
+    public float MinZ;
+    public float MaxX;
+    public float MaxY;
+    public float MaxZ;
+
+    public void LimitPosition()
     {
-        trNeedLimit.position = new Vector3(Mathf.Clamp(trNeedLimit.position.x, -1, 1.5f),
-                                           Mathf.Clamp(trNeedLimit.position.y, 0, 1.2f),
-                                           Mathf.Clamp(trNeedLimit.position.z,-0.6f,1));
+        Transform trNeedLimit = transform;
+        var rigidbody = GetComponent<Rigidbody>();
+
+        trNeedLimit.position = new Vector3(Mathf.Clamp(trNeedLimit.position.x, -1, 1.2f),
+                                           Mathf.Clamp(trNeedLimit.position.y, 0, 1.6f),
+                                           Mathf.Clamp(trNeedLimit.position.z,-0.6f,0.5f));
     }
 }
