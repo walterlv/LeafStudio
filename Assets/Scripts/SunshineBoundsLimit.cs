@@ -29,6 +29,11 @@ public class SunshineBoundsLimit : MonoBehaviour
         Transform trNeedLimit = transform;
         var rigidbody = GetComponent<Rigidbody>();
 
+        if (rigidbody.velocity.x == 0f && rigidbody.velocity.z == 0f && rigidbody.velocity.y < -0.05 && rigidbody.velocity.y > -0.3f)
+        {
+            return;
+        }
+
         if (trNeedLimit.position.x < MinX || trNeedLimit.position.x > MaxX)
         {
             rigidbody.velocity = new Vector3(0, rigidbody.velocity.y, rigidbody.velocity.z);
