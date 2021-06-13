@@ -20,7 +20,7 @@ public class SunshineFallDown : MonoBehaviour
         for (int i = 0; i < 10; i++)
         {
             var sunshine = Instantiate(SunshinePrefabs);
-            sunshine.transform.position = new Vector3(Random.Range(MinX, MaxX), y: 2, Random.Range(MinZ, MaxZ));
+            sunshine.transform.position = new Vector3(Random.Range(MinX, MaxX), y: 1.75f, Random.Range(MinZ, MaxZ));
 
             var rigidbody = sunshine.GetComponent<Rigidbody>();
             rigidbody.velocity = new Vector3(0, -0.1f, 0);

@@ -21,7 +21,7 @@ public class SunshineBoundsLimit : MonoBehaviour
     public float MinY = 0;
     public float MinZ = -0.7f;
     public float MaxX = 1.2f;
-    public float MaxY = 1.6f;
+    public float MaxY = 1.8f;
     public float MaxZ = 0.5f;
 
     public void LimitPosition()
