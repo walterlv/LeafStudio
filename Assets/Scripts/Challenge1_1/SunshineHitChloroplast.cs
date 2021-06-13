@@ -26,7 +26,7 @@ public class SunshineHitChloroplast : MonoBehaviour
         if (StayTime > MaxStayTime)
         {
             LevelManager.GotoNextLevel();
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
 
@@ -61,7 +61,7 @@ public class SunshineHitChloroplast : MonoBehaviour
         //StayTime = 0;
     }
 
-    public float MaxStayTime = 1f;
+    public float MaxStayTime = 0.5f;
 
     public float StayTime;
     public GameObject GameLevelManager { set; get; }
